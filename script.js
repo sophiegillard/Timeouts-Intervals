@@ -26,13 +26,27 @@ wordcompter();
 // then "2 minutes have passed" (for 120 seconds and more), etc.
 
 const timerText = document.getElementById('timer-text');
+const minuteText = document.getElementById('minuteText');
 
-let count = 0;
+let second = 0;
+let minute = 0;
+let n=60;
 
 function timer (){
     setInterval(function(){
-        count += 1;
-        timerText.textContent = count;
-        }  ,1000);
+        second += 1;
+        if(second == 60){
+            second=1;
+            minute+=1
+            if(minute==1){
+                minuteText.textContent=minute +" minute has passed";
+            }else{
+                minuteText.textContent=minute +" minutes have passed";
+            };
+        }
+            else{
+        timerText.textContent = second;
+        }}  ,50);
+        
 }
  timer();
