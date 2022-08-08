@@ -2,7 +2,7 @@
 
 const wordText = document.getElementById('proutText');
 
-let word = 'prout';
+let word = 'Good Luck!';
 let nextLetter = 0;
 function wordcompter(){
   let interval = setInterval(() => {
@@ -46,7 +46,7 @@ function timer (){
         }
             else{
         timerText.textContent = second;
-        }}  ,50);
+        }}  ,1000);
         
 }
  timer();
@@ -65,30 +65,50 @@ holes.forEach(element => {
     return hole;
 });
 
+function addScore(){
+    let score = document.querySelector('.whackAMole__score');
+    score.innerText= parseInt(score.innerText)+100;
+}
+
+function lives(){
+    let lives = document.querySelector('.whackAMole__life');
+    lives.innerText= parseInt(lives.innerText)-1;
+    if(lives.innerHTML < 1){
+        alert('GAME OVER')
+        document.location.reload()
+    }
+}
+
+//Adding and removing class when click on 
 holes.forEach(hole => {
     hole.addEventListener("click",()=>{
-    hole.classList.toggle('red');
+        if(hole.classList.contains('green')){
+            hole.classList.remove('green');
+            console.log('good')
+            addScore()
+        }
+        else{
+            console.log('bad')
+            lives();
+            hole.classList.add('wrongHole');
+            setTimeout(() => {
+                hole.classList.remove('wrongHole')
+            }, 500);
+        }
 })
 });
 
-
-function redAppear(){
+//Make the green circle appear
+function greenAppear(){
     let interval = setInterval(() => {
         holes.forEach(hole => {
             const idx = Math.floor(Math.random() * holes.length);
             let target = holes[idx];
             // console.log (idx)
             // console.log(target)
-            target.classList.toggle('red')
-            
+            target.classList.toggle('green')
         });
     }, 2000);
 }
 
-redAppear();
-
-function hitTheRed(){
-    if (hole.hasClass('red')){
-        console.log ('hi');
-    }
-}
+greenAppear();
