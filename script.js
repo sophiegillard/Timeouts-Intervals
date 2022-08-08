@@ -54,26 +54,23 @@ function timer (){
 // _______________________________________________
 // Exercice 3 WHACK A MOLE
 
+//Take all the circles/holes
 let holes = document.querySelectorAll('.hole')
 console.log(holes);
 
-let i= 1;
-holes.forEach(element => {
-    element.classList.add('hole'+[i++]);
-    var hole = element;
-    console.log(hole);
-    return hole;
-});
-
+//Function to add score 
 function addScore(){
     let score = document.querySelector('.whackAMole__score');
     score.innerText= parseInt(score.innerText)+100;
 }
+let mySound = new Audio('mixkit-sad-game-over-trombone-471.wav')
 
+//Function to manage the lives
 function lives(){
     let lives = document.querySelector('.whackAMole__life');
     lives.innerText= parseInt(lives.innerText)-1;
     if(lives.innerHTML < 1){
+        mySound.play()
         alert('GAME OVER')
         document.location.reload()
     }
