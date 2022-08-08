@@ -1,3 +1,40 @@
-body{
-    margin: 100px;
+body {
+  margin: 100px;
 }
+
+.firstTwoExercice {
+  visibility: hidden;
+}
+
+.red {
+  background-color: red;
+}
+
+.whackAMole {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 600px;
+}
+
+.whackAMole__score {
+  width: 150px;
+  height: 50px;
+  border: solid black 1px;
+}
+
+.whackAMole__game {
+  width: 350px;
+  height: 500px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.whackAMole__game .hole {
+  border: black solid 1px;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+}/*# sourceMappingURL=style.css.map */

@@ -50,3 +50,45 @@ function timer (){
         
 }
  timer();
+
+// _______________________________________________
+// Exercice 3 WHACK A MOLE
+
+let holes = document.querySelectorAll('.hole')
+console.log(holes);
+
+let i= 1;
+holes.forEach(element => {
+    element.classList.add('hole'+[i++]);
+    var hole = element;
+    console.log(hole);
+    return hole;
+});
+
+holes.forEach(hole => {
+    hole.addEventListener("click",()=>{
+    hole.classList.toggle('red');
+})
+});
+
+
+function redAppear(){
+    let interval = setInterval(() => {
+        holes.forEach(hole => {
+            const idx = Math.floor(Math.random() * holes.length);
+            let target = holes[idx];
+            // console.log (idx)
+            // console.log(target)
+            target.classList.toggle('red')
+            
+        });
+    }, 2000);
+}
+
+redAppear();
+
+function hitTheRed(){
+    if (hole.hasClass('red')){
+        console.log ('hi');
+    }
+}
