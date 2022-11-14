@@ -4,6 +4,7 @@
   color: white;
   position: absolute;
   left: 20px;
+  display: none;
 }
 
 .green {
