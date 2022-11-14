@@ -1,4 +1,5 @@
 # Timeouts-Intervals
+
 Exercice JS realized during the Becode training. One of the first JS project.
 
 
@@ -14,5 +15,7 @@ How does the game work:
 - if you have no lives left, you are GAME OVER and the page reload to start again
 
 What to improve:
-- difficulty level
+
+- Difficulty level
 - Button to start the game
+
