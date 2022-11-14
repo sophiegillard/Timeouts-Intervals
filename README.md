@@ -1,5 +1,5 @@
 # Timeouts-Intervals
-Exercice JS
+Exercice JS realized during the Becode training. One of the first JS project.
 
 
 Creating games using javascript.
